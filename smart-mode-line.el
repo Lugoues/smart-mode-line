@@ -1650,7 +1650,7 @@ project name first."
         (replace-regexp-in-string
          (concat "^" (abbreviate-file-name proj))
          (format sml/projectile-replacement-format (projectile-project-name))
-         in)
+         (abbreviate-file-name (file-truename in)))
       in)))
 
 (defun sml/regexp-composer (getter)
